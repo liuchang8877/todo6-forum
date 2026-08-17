@@ -4,9 +4,9 @@ window.FORUM_CONFIG = {
   description: "分享实践、提出问题、沉淀值得被检索的讨论。",
 
   repository: "liuchang8877/todo6-forum",
-  repositoryId: "",
+  repositoryId: "R_kgDOT61ShQ",
   discussionCategory: "General",
-  discussionCategoryId: "",
+  discussionCategoryId: "DIC_kwDOT61Shc4DDjhm",
   giscusTerm: "community-home",
 
   categories: [

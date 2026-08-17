@@ -14,3 +14,4 @@
 - The Pages workflow pins the current official action majors verified on 2026-08-17: `actions/checkout@v7`, `actions/configure-pages@v6`, `actions/upload-pages-artifact@v5`, and `actions/deploy-pages@v5`.
 - `actions/upload-pages-artifact@v5` excludes dotfiles by default, so the workflow explicitly sets `include-hidden-files: true` to preserve `forum/.nojekyll` in the deployed artifact.
 - The public repository was created and GitHub Discussions was enabled before the first push. The initial publish intentionally targets `main` because an empty repository has no base branch for a feature PR; the Pages workflow is scoped to the forum artifact.
+- After the repository was created, its public node ID and the default `General` category ID were read from GitHub GraphQL and filled into `forum/config.js`. No token is stored; the remaining deployment choice is only the optional custom domain.
