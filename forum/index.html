@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="一个由 GitHub Discussions 驱动的轻量社区。">
+    <meta name="theme-color" content="#f4f5f2">
+    <title>社区广场</title>
+    <link rel="icon" href="https://github.githubassets.com/favicons/favicon.svg">
+    <link rel="preconnect" href="https://giscus.app">
+    <link rel="stylesheet" href="styles.css">
+    <script src="config.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="./" aria-label="返回社区首页">
+          <span class="brand-mark" id="brandMark" aria-hidden="true">社</span>
+          <span id="brandName">社区广场</span>
+        </a>
+
+        <nav class="primary-nav" aria-label="主导航">
+          <a href="#categories">讨论分区</a>
+          <a href="#community-thread">站务交流</a>
+          <a id="repositoryLink" href="#setup">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro-section" aria-labelledby="siteName">
+        <div class="intro-copy">
+          <p class="kicker">PUBLIC DISCUSSIONS</p>
+          <h1 id="siteName">社区广场</h1>
+          <p id="siteDescription" class="intro-description">分享实践、提出问题、沉淀值得被检索的讨论。</p>
+
+          <div class="intro-actions" aria-label="讨论入口">
+            <a id="browseDiscussions" class="button button-primary" href="#setup">浏览讨论</a>
+            <a id="newDiscussion" class="button button-secondary" href="#setup">发起话题</a>
+          </div>
+        </div>
+
+        <aside class="community-signal" aria-label="社区状态">
+          <div class="provider-row">
+            <img src="https://github.githubassets.com/favicons/favicon.svg" alt="" width="28" height="28">
+            <div>
+              <strong>GitHub Discussions</strong>
+              <span id="connectionStatus">等待仓库配置</span>
+            </div>
+          </div>
+          <dl class="signal-list">
+            <div>
+              <dt>内容</dt>
+              <dd>公开可检索</dd>
+            </div>
+            <div>
+              <dt>身份</dt>
+              <dd>GitHub 账号</dd>
+            </div>
+            <div>
+              <dt>维护</dt>
+              <dd>无需数据库</dd>
+            </div>
+          </dl>
+        </aside>
+      </section>
+
+      <section id="setup" class="config-state" hidden aria-live="polite">
+        <span class="status-dot" aria-hidden="true"></span>
+        <div>
+          <strong>讨论连接尚未完成</strong>
+          <p>页面结构已经可用，补齐 <code>config.js</code> 中的仓库与 giscus 标识后即可开放讨论。</p>
+        </div>
+      </section>
+
+      <section id="categories" class="section-block" aria-labelledby="categoryTitle">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">SECTIONS</p>
+            <h2 id="categoryTitle">讨论分区</h2>
+          </div>
+          <a id="allDiscussions" class="text-link" href="#setup">查看全部讨论 <span aria-hidden="true">→</span></a>
+        </div>
+        <div id="categoryGrid" class="category-grid"></div>
+      </section>
+
+      <section class="discussion-layout" aria-label="社区交流区">
+        <div id="community-thread" class="thread-panel">
+          <div class="section-heading compact">
+            <div>
+              <p class="section-label">COMMUNITY DESK</p>
+              <h2>站务交流</h2>
+            </div>
+          </div>
+
+          <div id="giscusMount" class="giscus-mount">
+            <div class="thread-placeholder">
+              <strong>讨论组件等待配置</strong>
+              <p>连接公开仓库后，这里会显示由 GitHub Discussions 保存的站务交流。</p>
+            </div>
+          </div>
+        </div>
+
+        <aside class="community-rules" aria-labelledby="rulesTitle">
+          <p class="section-label">COMMUNITY STANDARD</p>
+          <h2 id="rulesTitle">社区公约</h2>
+          <ol>
+            <li><span>01</span><p><strong>尊重事实</strong>引用资料时标明来源，区分判断与证据。</p></li>
+            <li><span>02</span><p><strong>聚焦问题</strong>讨论技术与观点，不攻击个人。</p></li>
+            <li><span>03</span><p><strong>保护隐私</strong>不发布密钥、账号或他人的敏感信息。</p></li>
+          </ol>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p><span id="footerName">社区广场</span> · 内容由 GitHub Discussions 托管</p>
+      <p>© <span id="currentYear"></span></p>
+    </footer>
+  </body>
+</html>
